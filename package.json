@@ -10,7 +10,8 @@
     "lint": "tslint --project .",
     "lintfix": "tslint --project . --fix",
     "incDevVersion": "npm version prerelease",
-    "debug": "NODE_ENV=debug node ./dist/test.js"
+    "debug": "NODE_ENV=debug nodemon ./dist/io.js",
+    "demo": "NODE_ENV=debug nodemon ./dist/test.js"
   },
   "main": "./dist/io.js",
   "repository": {
@@ -35,6 +36,7 @@
     "typescript": "^3.1.1"
   },
   "dependencies": {
-    "@showcomposer/datalib": "0.0.1-dev.1"
+    "@showcomposer/datalib": "0.0.1-dev.1",
+    "dmxnet": "^0.2.2"
   }
 }
