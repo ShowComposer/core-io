@@ -1,0 +1,40 @@
+{
+  "name": "@showcomposer/core-io",
+  "version": "0.0.1-dev.0",
+  "description": "io libary for ShowComposer",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "setup": "npm ci",
+    "lint": "tslint --project .",
+    "lintfix": "tslint --project . --fix",
+    "incDevVersion": "npm version prerelease",
+    "debug": "NODE_ENV=debug node ./dist/test.js"
+  },
+  "main": "./dist/io.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShowComposer/core-io.git"
+  },
+  "keywords": [
+    "ShowComposer",
+    "Libary",
+    "Networking",
+    "ArtNet"
+  ],
+  "author": "Marvin Gaube/ShowComposer Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShowComposer/core-io/issues"
+  },
+  "homepage": "https://showcomposer.de",
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "tslint": "^5.12.0",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "@showcomposer/datalib": "0.0.1-dev.1"
+  }
+}
