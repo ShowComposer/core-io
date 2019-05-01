@@ -9,11 +9,11 @@ const dmxnetSenders = {};
 data.dump("io.artnet");
 const artnetEvent = data.subscribe("io.artnet");
 // Subscribe to ArtNet changes
-artnetEvent.on("data", () => {
-  handleArtNet();
+artnetEvent.on("data", (k) => {
+  handleArtNet(k);
 });
 // Handle incoming artnet data
-function handleArtNet() {
+function handleArtNet(k) {
   if (!data.data.io) {
     return;
   }
