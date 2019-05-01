@@ -11,11 +11,22 @@ artnetEvent.on('data',()=>{
   handleArtNet();
 });
 function handleArtNet() {
+  if(!data.data.io) {
+    return;
+  }
   const anData=data.data["io"]["artnet"];
   if(anData) {
     Object.keys(anData).forEach((s) => {
       if(!dmxnetSenders[s]) {
         dmxnetSenders[s]=dmxnet.newSender({});
+        console.log("New Sender");
+      }
+      console.log(anData);
+      if(anData[s].channel) {
+        Object.keys(anData[s].channel).forEach((c) => {
+        dmxnetSenders[s].prepChannel(c,parseInt(anData[s].channel[c],10));
+        });
+        dmxnetSenders[s].transmit();
       }
     });
   }
