@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "@showcomposer/datalib": "0.0.1-dev.2",
-    "dmxnet": "^0.2.3"
+    "dmxnet": "^0.2.4"
   }
 }
