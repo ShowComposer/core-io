@@ -1,7 +1,14 @@
+// Import Utils
+import { Logging } from "@hibas123/nodelogging";
+// Import ShowComposer-Modules
 import { Datalib } from "@showcomposer/datalib";
+// Import i/o modules
 import dmxlib = require("dmxnet");
 
+// Initialize globals
+// SC Data
 const data = new Datalib();
+// ArtNet
 const dmxnet = new dmxlib.dmxnet({sName: "ShowComposer", lName: "ShowComposer IO module"});
 const dmxnetSenders = {};
 
@@ -23,9 +30,9 @@ function handleArtNet(k) {
     Object.keys(anData).forEach((s) => {
       if (!dmxnetSenders[s]) {
         dmxnetSenders[s] = dmxnet.newSender({});
-        console.log("New Sender");
+        Logging.log("New DMXNET sender");
       }
-      console.log(anData);
+      Logging.debug(anData);
       // Send channels
       if (anData[s].channel) {
         Object.keys(anData[s].channel).forEach((c) => {
