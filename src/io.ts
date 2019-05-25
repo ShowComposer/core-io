@@ -47,7 +47,8 @@ function handleArtNet(k) {
       // Send channels
       if (anData[s].channel) {
         Object.keys(anData[s].channel).forEach((c) => {
-          if (c >= 0 && c < 512) {
+          const ch = parseInt(c, 10);
+          if (ch >= 0 && ch < 512) {
             dmxnetSenders[s].prepChannel(c, parseInt(anData[s].channel[c], 10));
           }
         });
