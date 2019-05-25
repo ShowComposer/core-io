@@ -35,18 +35,21 @@ function handleArtNet(k) {
         const dmxnetUniverse = anData[s].universe || 0;
         const dmxnetNet = anData[s].net || 0;
         const dmxnetPort = anData[s].port || 6454;
-        dmxnetSenders[s] = dmxnet.newSender({ip: dmxnetIP, net: dmxnetNet,
+        dmxnetSenders[s] = dmxnet.newSender({
+          ip: dmxnetIP, net: dmxnetNet,
           port: dmxnetPort, subnet: dmxnetSubnet, universe: dmxnetUniverse,
-           });
+        });
         Logging.log("New DMXNET sender to " + dmxnetIP + ":" +
-        dmxnetPort + " N:" + dmxnetNet + " S:" + dmxnetSubnet + " U:" +
-        dmxnetUniverse);
+          dmxnetPort + " N:" + dmxnetNet + " S:" + dmxnetSubnet + " U:" +
+          dmxnetUniverse);
       }
       Logging.debug(anData);
       // Send channels
       if (anData[s].channel) {
         Object.keys(anData[s].channel).forEach((c) => {
-          dmxnetSenders[s].prepChannel(c, parseInt(anData[s].channel[c], 10));
+          if (c >= 0 && c < 512) {
+            dmxnetSenders[s].prepChannel(c, parseInt(anData[s].channel[c], 10));
+          }
         });
         dmxnetSenders[s].transmit();
       }
