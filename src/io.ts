@@ -13,7 +13,7 @@ const dmxnet = new dmxlib.dmxnet({ sName: "ShowComposer", lName: "ShowComposer I
 const dmxnetSenders = {};
 
 // Get all existing artnet data
-data.dump("io.artnet",() => {
+data.dump("io.artnet", () => {
   handleArtNet("io.artnet");
 });
 const artnetEvent = data.subscribe("io.artnet");
