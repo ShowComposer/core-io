@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@hibas123/nodelogging": "^2.0.6",
-    "@showcomposer/datalib": "0.0.1-dev.8",
+    "@showcomposer/datalib": "0.0.1-dev.9",
     "dmxnet": "^0.2.4"
   }
 }
