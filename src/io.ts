@@ -43,7 +43,6 @@ function handleArtNet(k) {
           dmxnetPort + " N:" + dmxnetNet + " S:" + dmxnetSubnet + " U:" +
           dmxnetUniverse);
       }
-      Logging.debug(anData);
       // Send channels
       if (anData[s].channel) {
         Object.keys(anData[s].channel).forEach((c) => {
@@ -53,6 +52,7 @@ function handleArtNet(k) {
           }
         });
         dmxnetSenders[s].transmit();
+        Logging.debug("Transmit ArtNet");
       }
     });
   }
