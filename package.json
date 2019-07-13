@@ -31,14 +31,14 @@
   },
   "homepage": "https://showcomposer.de",
   "devDependencies": {
-    "@types/node": "^10.14.7",
-    "nodemon": "^1.19.0",
+    "@types/node": "^10.14.12",
+    "nodemon": "^1.19.1",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@hibas123/nodelogging": "^2.0.6",
-    "@showcomposer/datalib": "0.0.1-dev.13",
+    "@hibas123/nodelogging": "^2.1.0",
+    "@showcomposer/datalib": "0.0.1-dev.14",
     "dmxnet": "^0.3.1"
   }
 }
